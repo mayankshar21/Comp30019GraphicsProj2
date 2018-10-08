@@ -52,7 +52,7 @@
 			fixed4 frag (vertOut v) : SV_Target
 			{
 				// setting up constants parameters
-				float objectOutline = 0.5;
+				float objectOutline = 0.3;
 				float diffusionThreshold = 4.0;
 
 				// setting up the different vector components
@@ -65,7 +65,7 @@
 				float outLineWidth = saturate((dot(interpNormal, V) - objectOutline) * 1000);
 				
 				// setting up ambient component of Cel Shader
-				float Ka = 0.1;
+				float Ka = 0.3;
 				float amb = Ka;
 
 				// setting up diffuse component of Cel Shader
