@@ -12,10 +12,13 @@ public class CameraControl : MonoBehaviour
 {
     // Speed of the camera movement
     public float speed = 5.0f;
+    public float cameraSpeed = 100.0f;
     // Terrain size
     private float xMax;
     private float zMax;
     private float yMax;
+    public float minAngle = -10.0f;
+    public float maxAngle = 10.0f;
 
 
     void Start()
@@ -39,38 +42,52 @@ public class CameraControl : MonoBehaviour
         float yaw = 0.0f;
         float pitch = 0.0f;
         float amountToMove = Time.deltaTime * speed;
+        Vector3 temporary;
         Vector3 futurePosition ;
-                                 
+        Vector3 futureAngle;
+            
             // Calculate future position and checks whether it goes beyond the terrain size
             // then proceeds if it's within the bounds
             if (Input.GetKey(KeyCode.W))
-            {
-                    this.transform.position += this.transform.forward * amountToMove;
+            {       
+                    
+                    temporary = this.transform.forward * amountToMove;
+                    temporary.y = 0;
+                    this.transform.position += temporary;
             }
             if (Input.GetKey(KeyCode.S))
             {
-               
-                    this.transform.position -= this.transform.forward * amountToMove;
+                    temporary = this.transform.forward * amountToMove;
+                    temporary.y = 0;
+                    this.transform.position -= temporary;
               
             }
             if (Input.GetKey(KeyCode.A))
-            {
-                    this.transform.position -= this.transform.right * amountToMove;
+            {       
+                    temporary = this.transform.right * amountToMove;
+                    temporary.y = 0;
+                    this.transform.position -= temporary;
                 
             }
             if (Input.GetKey(KeyCode.D))
             {
-                
-                    this.transform.position += this.transform.right * amountToMove;
+                    
+                    temporary = this.transform.right * amountToMove;
+                    temporary.y = 0;
+                    this.transform.position += temporary;
                 
             }
                 
         // Calculates movement of mouse in the x-axis
-        yaw += speed * Input.GetAxis("Mouse X");
+        yaw += cameraSpeed * Input.GetAxis("Mouse X") * Time.deltaTime;
         // Calculates movement of mouse in the y-axis
-        pitch -= speed * Input.GetAxis("Mouse Y");
+        //pitch += speed * Input.GetAxis("Mouse Y");
         // Applies the change in yaw and pitch to the angle of the camera
+
+        pitch -= Input.GetAxis("Mouse Y") * cameraSpeed * Time.deltaTime;
+        pitch = Mathf.Clamp(pitch, minAngle, maxAngle);
         this.transform.eulerAngles += new Vector3(pitch, yaw, 0.0f);
+
 
        
     }
