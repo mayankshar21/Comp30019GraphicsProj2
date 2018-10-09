@@ -1,4 +1,5 @@
-﻿Shader "Unlit/TextureShader"
+﻿// From tutorial materials
+Shader "Unlit/TextureShader"
 {
 	Properties
 	{

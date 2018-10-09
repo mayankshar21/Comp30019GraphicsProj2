@@ -10,7 +10,7 @@ Shader "Unlit/FogShader"
 	}
 	SubShader
 	{
-		//Tags { "RenderType"="Opaque" }
+		Tags { "RenderType"="Opaque" }
 		Zwrite On
 
 		Pass

@@ -12,6 +12,6 @@ public class FogScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        GetComponent<Camera>().SetReplacementShader(fogShader, "");
+        GetComponent<Camera>().SetReplacementShader(fogShader, "RenderType");
 	}
 }
