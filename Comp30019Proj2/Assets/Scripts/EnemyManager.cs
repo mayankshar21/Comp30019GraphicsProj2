@@ -13,7 +13,7 @@ public class EnemyManager : MonoBehaviour {
     public Player player;
 
     // Time between spawn
-    public float spawnTime = 2f;
+    public float spawnTime = 5f;
 
     public Vector3[] spawnPoints;
 
@@ -36,13 +36,13 @@ public class EnemyManager : MonoBehaviour {
     /// </summary>
     private void Spawn()
     {
-        if(player.CurrentHP <= 0)
+        if(player.currentHP <= 0)
         {
             return;
         }
         Vector3 spawnPoint = FindSpawnPoint();
         GameObject newEnemy = Instantiate(enemy, spawnPoint, Quaternion.identity);
-        newEnemy.GetComponent<MoveTo>().goal = playerObject.transform;
+        newEnemy.GetComponent<EnemyController>().player = playerObject;
     }
 
     /// <summary>
