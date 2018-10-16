@@ -1,0 +1,82 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+// For main game logic
+public class EnemyManager : MonoBehaviour {
+
+    public GameObject playerObject;
+
+    public GameObject enemy;
+
+    public Player player;
+
+    // Time between spawn
+    public float spawnTime = 2f;
+
+    public Vector3[] spawnPoints;
+
+    public float spawnRange = 30f;
+
+
+	// Use this for initialization
+	void Start () {
+        InitializeSpawnPoints();
+        InvokeRepeating("Spawn", spawnTime, spawnTime);
+    }
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
+
+    /// <summary>
+    /// Spawn an enemy
+    /// </summary>
+    private void Spawn()
+    {
+        if(player.CurrentHP <= 0)
+        {
+            return;
+        }
+        Vector3 spawnPoint = FindSpawnPoint();
+        GameObject newEnemy = Instantiate(enemy, spawnPoint, Quaternion.identity);
+        newEnemy.GetComponent<MoveTo>().goal = playerObject.transform;
+    }
+
+    /// <summary>
+    /// Initialize spawn points
+    /// </summary>
+    private void InitializeSpawnPoints()
+    {
+        float y = 1.5f;
+        GameObject[] points = GameObject.FindGameObjectsWithTag("WayPoint");
+        spawnPoints = new Vector3[points.Length];
+        for (int i = 0; i < points.Length; i++)
+        {
+            spawnPoints[i].x = points[i].transform.position.x;
+            spawnPoints[i].y = y;
+            spawnPoints[i].z = points[i].transform.position.z;
+        }
+    }
+
+    /// <summary>
+    /// Find a spawn which the distance from player is within spawn range
+    /// If not such point found, return a random point
+    /// </summary>
+    /// <returns>A Vector3 spawn point</returns>
+    private Vector3 FindSpawnPoint()
+    {
+        Vector3 playerLocation = playerObject.transform.position;
+        for (int i = 0; i < spawnPoints.Length; i++)
+        {
+            float distance = Mathf.Sqrt(Mathf.Pow((playerLocation.x - spawnPoints[i].x), 2) + Mathf.Pow((playerLocation.z - spawnPoints[i].z), 2));
+            if (distance <= spawnRange)
+            {
+                return spawnPoints[i];
+            }
+        }
+        return spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Length)];
+    }
+}
