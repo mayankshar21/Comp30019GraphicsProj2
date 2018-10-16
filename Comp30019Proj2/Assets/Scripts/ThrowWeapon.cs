@@ -14,7 +14,10 @@ public class ThrowWeapon : MonoBehaviour {
 	void Update () {
         if (Input.GetMouseButtonDown(0)){
             GameObject laptop = Instantiate(prefab) as GameObject;
-            laptop.transform.position = transform.position + Camera.main.transform.forward * 2;
+            Vector3 laptopPosition = transform.position;
+            laptopPosition += new Vector3(0.0f, 0.25f, 0.0f);
+            laptop.transform.position = laptopPosition + Camera.main.transform.forward * 2;
+
             Rigidbody rigidbody = laptop.GetComponent<Rigidbody>();
             rigidbody.velocity = Camera.main.transform.forward * 40;
         }
