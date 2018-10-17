@@ -113,7 +113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c3eb90b702891647b951e321dae33ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goal: {fileID: 0}
+  player: {fileID: 0}
+  attackRate: 3
 --- !u!136 &136851097467710108
 CapsuleCollider:
   m_ObjectHideFlags: 1

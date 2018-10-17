@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 4909941690500726}
   - component: {fileID: 54302149846073056}
   - component: {fileID: 65228189758612922}
+  - component: {fileID: 114322295221569650}
   m_Layer: 0
   m_Name: laptop
   m_TagString: Untagged
@@ -214,3 +215,14 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.1, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114322295221569650
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1716111664439686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd269f431309f438c92fd83214777f33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

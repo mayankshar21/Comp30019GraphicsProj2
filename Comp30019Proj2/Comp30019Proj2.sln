@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
+# Visual Studio for Mac
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Comp30019Proj2", "Assembly-CSharp-firstpass.csproj", "{7AB6ECF4-F93A-7990-8393-FF8B59246895}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Comp30019Proj2", "Assembly-CSharp.csproj", "{997B1A29-FB07-EF5F-8001-766A3AC2272A}"
