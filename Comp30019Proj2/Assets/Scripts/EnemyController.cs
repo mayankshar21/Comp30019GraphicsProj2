@@ -27,11 +27,11 @@ public class EnemyController : MonoBehaviour {
                 player.GetComponent<Player>().UpdateCurrHP(-1);
             }
         }
-        else
-        {
-            attackTimer = Time.timeSinceLevelLoad + attackRate;
-        }
-            
+        //else
+        //{
+        //    attackTimer = Time.timeSinceLevelLoad + attackRate;
+        //}
+
     }
 
     public void SetAttackRate(float rate)
