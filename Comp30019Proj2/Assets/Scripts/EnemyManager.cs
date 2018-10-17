@@ -13,12 +13,13 @@ public class EnemyManager : MonoBehaviour {
     public Player player;
 
     // Time between spawn
-    public float spawnTime = 5f;
+    public float spawnTime = 10f;
 
     public Vector3[] spawnPoints;
 
-    public float spawnRange = 30f;
+    public float spawnRange = 35f;
 
+    public float attackRate = 3f;
 
 	// Use this for initialization
 	void Start () {
@@ -36,13 +37,14 @@ public class EnemyManager : MonoBehaviour {
     /// </summary>
     private void Spawn()
     {
-        if(player.currentHP <= 0)
+        if(player.GetCurrHP() <= 0)
         {
             return;
         }
         Vector3 spawnPoint = FindSpawnPoint();
         GameObject newEnemy = Instantiate(enemy, spawnPoint, Quaternion.identity);
         newEnemy.GetComponent<EnemyController>().player = playerObject;
+        newEnemy.GetComponent<EnemyController>().SetAttackRate(this.attackRate);
     }
 
     /// <summary>
@@ -69,13 +71,20 @@ public class EnemyManager : MonoBehaviour {
     private Vector3 FindSpawnPoint()
     {
         Vector3 playerLocation = playerObject.transform.position;
+        Vector3[] points = new Vector3[spawnPoints.Length];
+        int numPoint = 0;
         for (int i = 0; i < spawnPoints.Length; i++)
         {
             float distance = Mathf.Sqrt(Mathf.Pow((playerLocation.x - spawnPoints[i].x), 2) + Mathf.Pow((playerLocation.z - spawnPoints[i].z), 2));
             if (distance <= spawnRange)
             {
-                return spawnPoints[i];
+                points[numPoint] = spawnPoints[i];
+                numPoint++;
             }
+        }
+        if (numPoint > 0)
+        {
+            return points[UnityEngine.Random.Range(0, numPoint)];
         }
         return spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Length)];
     }
