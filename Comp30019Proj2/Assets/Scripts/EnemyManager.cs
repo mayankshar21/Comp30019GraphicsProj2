@@ -18,7 +18,7 @@ public class EnemyManager : MonoBehaviour {
     public Vector3[] spawnPoints;
 
     public float spawnRangeMax = 40f;
-    public float spawnRangeMin = 5f;
+    public float spawnRangeMin = 8f;
 
     public float attackRate = 3f;
 

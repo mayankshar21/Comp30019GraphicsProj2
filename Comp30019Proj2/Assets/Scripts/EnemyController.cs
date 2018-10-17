@@ -7,7 +7,7 @@ public class EnemyController : MonoBehaviour {
 
     public GameObject player;
     private NavMeshAgent agent;
-    private float attackRate = 3f;
+    private float attackRate = 2.4f;
     private float attackTimer;
 
     void Start()
@@ -19,7 +19,7 @@ public class EnemyController : MonoBehaviour {
     private void Update()
     {
         agent.destination = player.transform.position;
-        if (agent.remainingDistance <= 3.5f && player.GetComponent<Player>().GetCurrHP() > 0)
+        if (agent.remainingDistance <= 3.5f && player.GetComponent<Player>().GetCurrHP() > 0 && agent.remainingDistance > 0)
         {
             if (Time.timeSinceLevelLoad >= attackTimer)
             {
