@@ -21,15 +21,15 @@ public class EnemyController : MonoBehaviour {
         agent.destination = player.transform.position;
         if (agent.remainingDistance <= 3.5f && player.GetComponent<Player>().GetCurrHP() > 0)
         {
-            if (Time.time >= attackTimer)
+            if (Time.timeSinceLevelLoad >= attackTimer)
             {
-                attackTimer = Time.time + attackRate;
+                attackTimer = Time.timeSinceLevelLoad + attackRate;
                 player.GetComponent<Player>().UpdateCurrHP(-1);
             }
         }
         else
         {
-            attackTimer = Time.time + attackRate;
+            attackTimer = Time.timeSinceLevelLoad + attackRate;
         }
             
     }

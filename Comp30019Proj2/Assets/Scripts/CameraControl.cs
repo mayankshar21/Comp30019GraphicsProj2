@@ -87,10 +87,10 @@ public class CameraControl : MonoBehaviour
         // Calculates movement of mouse in the y-axis
         //pitch += speed * Input.GetAxis("Mouse Y");
         // Applies the change in yaw and pitch to the angle of the camera
-        pitch += Input.GetAxis("Mouse Y") * cameraSpeed * Time.deltaTime;
+        //pitch += Input.GetAxis("Mouse Y") * cameraSpeed * Time.deltaTime;
         //newXRotation = Mathf.Clamp(this.transform.eulerAngles.x + pitch, -0.4375f, 381.0f) - 360.0f;
-        newXRotation = this.transform.eulerAngles.x + pitch;
-        print(newXRotation);
+        //newXRotation = this.transform.eulerAngles.x + pitch;
+        //print(newXRotation);
         if (newXRotation < 20.0f && newXRotation > 0.0f){
             this.transform.eulerAngles = new Vector3(newXRotation, newYRotation, 0.0f);
         }

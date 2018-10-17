@@ -17,7 +17,8 @@ public class EnemyManager : MonoBehaviour {
 
     public Vector3[] spawnPoints;
 
-    public float spawnRange = 35f;
+    public float spawnRangeMax = 40f;
+    public float spawnRangeMin = 5f;
 
     public float attackRate = 3f;
 
@@ -76,7 +77,7 @@ public class EnemyManager : MonoBehaviour {
         for (int i = 0; i < spawnPoints.Length; i++)
         {
             float distance = Mathf.Sqrt(Mathf.Pow((playerLocation.x - spawnPoints[i].x), 2) + Mathf.Pow((playerLocation.z - spawnPoints[i].z), 2));
-            if (distance <= spawnRange)
+            if (distance <= spawnRangeMax && distance >= spawnRangeMin)
             {
                 points[numPoint] = spawnPoints[i];
                 numPoint++;

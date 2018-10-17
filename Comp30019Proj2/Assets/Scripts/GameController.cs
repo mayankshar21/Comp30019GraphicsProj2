@@ -16,7 +16,7 @@ public class GameController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        Time.timeScale = 1;	
 	}
 	
 	// Update is called once per frame
@@ -45,7 +45,15 @@ public class GameController : MonoBehaviour {
         UIController.numKilled.text = currKillNum.ToString();
         if (currKillNum >= currWave * NumEnemyToKill)
         {
-            this.NextWave();
+            if (currWave == TOTAL_WAVE)
+            {
+                Time.timeScale = 0;
+                UIController.ClearGame();
+            }
+            else
+            {
+                this.NextWave();
+            }          
         }
     }
 

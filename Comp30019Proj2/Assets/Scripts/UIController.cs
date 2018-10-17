@@ -16,10 +16,13 @@ public class UIController : MonoBehaviour {
 
     public Text numKilled;
 
+    public GameObject clearPanel;
+
 	// Use this for initialization
 	void Start () {
         gameEndPanel.SetActive(false);
         pausePanel.SetActive(false);
+        clearPanel.SetActive(false);
     }
 	
 	// Update is called once per frame
@@ -30,6 +33,11 @@ public class UIController : MonoBehaviour {
     public void EndGame()
     {
         gameEndPanel.SetActive(true);
+    }
+
+    public void ClearGame()
+    {
+        clearPanel.SetActive(true);
     }
 
     public void UpdateCurrHP(int hp)
