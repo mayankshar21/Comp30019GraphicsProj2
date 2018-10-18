@@ -154,8 +154,8 @@ namespace RPGCharacterAnims{
 
 		//Below are the state functions. Each one is called based on the name of the state, so when currentState = Idle, we call Idle_EnterState. If currentState = Jump, we call Jump_SuperUpdate()
 		void Idle_EnterState(){
-			superCharacterController.EnableSlopeLimit();
-			superCharacterController.EnableClamping();
+			
+			
 			canJump = true;
 			doublejumped = false;
 			canDoubleJump = false;

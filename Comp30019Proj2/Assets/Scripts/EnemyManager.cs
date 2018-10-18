@@ -6,6 +6,7 @@ using UnityEngine;
 // For main game logic
 public class EnemyManager : MonoBehaviour {
 
+    private ChangeShader changeShader;
     public GameObject playerObject;
 
     public GameObject enemy;
@@ -26,6 +27,7 @@ public class EnemyManager : MonoBehaviour {
 	void Start () {
         InitializeSpawnPoints();
         InvokeRepeating("Spawn", spawnTime, spawnTime);
+        changeShader = new ChangeShader();
     }
 	
 	// Update is called once per frame
@@ -46,6 +48,8 @@ public class EnemyManager : MonoBehaviour {
         GameObject newEnemy = Instantiate(enemy, spawnPoint, Quaternion.identity);
         newEnemy.GetComponent<EnemyController>().player = playerObject;
         newEnemy.GetComponent<EnemyController>().SetAttackRate(this.attackRate);
+        //changeShader.GetComponent<ChangeShader>.c
+        //newEnemy.GetComponent<Shader>.
     }
 
     /// <summary>

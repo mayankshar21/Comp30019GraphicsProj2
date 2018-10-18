@@ -1,4 +1,10 @@
-﻿Shader "Unlit/CelShader"
+﻿// https://pdfs.semanticscholar.org/d17c/efe2c199a87a2ee8e5dc82399a50a8e951c4.pdf
+// http://www.shaderslab.com/demo-77---cel-shading-(formula).html
+// https://www.youtube.com/watch?v=mbuOaBtTBxg
+// Phong Shader from University Lab material
+// Shader outline from https://www.youtube.com/watch?v=3qBDTh9zWrQ&t=554s 
+// https://www.youtube.com/watch?v=sMs-VjbUZg4
+Shader "Unlit/CelShader"
 {
 	Properties
 	{

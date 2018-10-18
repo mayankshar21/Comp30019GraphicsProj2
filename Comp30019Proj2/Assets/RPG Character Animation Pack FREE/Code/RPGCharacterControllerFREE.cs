@@ -24,14 +24,7 @@ namespace RPGCharacterAnims{
 			rpgCharacterMovementController = GetComponent<RPGCharacterMovementController>();
 			rpgCharacterInputController = GetComponent<RPGCharacterInputController>();
 			animator = GetComponentInChildren<Animator>();
-			if(animator == null){
-				Debug.LogError("ERROR: There is no animator for character.");
-				Destroy(this);
-			}
-			if(target == null){
-				Debug.LogError("ERROR: There is no target for character.");
-				Destroy(this);
-			}
+			
 		}
 
 		#endregion
