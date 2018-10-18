@@ -27,7 +27,7 @@ public class EnemyManager : MonoBehaviour {
 	void Start () {
         InitializeSpawnPoints();
         InvokeRepeating("Spawn", spawnTime, spawnTime);
-        changeShader = new ChangeShader();
+        //changeShader = new ChangeShader();
     }
 	
 	// Update is called once per frame
