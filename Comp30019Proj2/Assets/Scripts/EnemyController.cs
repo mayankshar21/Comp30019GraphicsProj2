@@ -2,12 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
+/// <summary>
+/// Enemy script
+/// </summary>
 public class EnemyController : MonoBehaviour {
 
+    // target player
     public GameObject player;
+    // nav mesh agent
     private NavMeshAgent agent;
-    private float attackRate = 2.4f;
+    // initial attack rate
+    private float attackRate = 3f;
+    // time since last attack
     private float attackTimer;
 
     void Start()
@@ -18,7 +24,9 @@ public class EnemyController : MonoBehaviour {
 
     private void Update()
     {
+        // update player position
         agent.destination = player.transform.position;
+        // if player still alive and within range 3.5, try attack player
         if (agent.remainingDistance <= 3.5f && player.GetComponent<Player>().GetCurrHP() > 0 && agent.remainingDistance > 0)
         {
             if (Time.timeSinceLevelLoad >= attackTimer)
@@ -27,13 +35,13 @@ public class EnemyController : MonoBehaviour {
                 player.GetComponent<Player>().UpdateCurrHP(-1);
             }
         }
-        //else
-        //{
-        //    attackTimer = Time.timeSinceLevelLoad + attackRate;
-        //}
 
     }
 
+    /// <summary>
+    /// Update attack rate
+    /// </summary>
+    /// <param name="rate">new rate</param>
     public void SetAttackRate(float rate)
     {
         this.attackRate = rate;

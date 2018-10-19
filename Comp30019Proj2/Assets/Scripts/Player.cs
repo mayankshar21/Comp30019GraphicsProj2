@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 
+    // max hp
     public int maxHP = 20;
+    // current hp
     private int currentHP = 20;
     public GameController gameController;
 
@@ -47,6 +49,9 @@ public class Player : MonoBehaviour {
         return this.currentHP;
     }
 
+    /// <summary>
+    /// Generate weapon
+    /// </summary>
     private void Attack()
     {
         GameObject laptop = Instantiate(this.laptop) as GameObject;

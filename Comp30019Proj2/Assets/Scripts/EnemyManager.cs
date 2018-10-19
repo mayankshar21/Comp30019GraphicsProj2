@@ -6,23 +6,29 @@ using UnityEngine;
 // For main game logic
 public class EnemyManager : MonoBehaviour {
 
-    private ChangeShader changeShader;
+    // Player game object
     public GameObject playerObject;
 
+    // Enemy prefab
     public GameObject enemy;
 
+    // Player script
     public Player player;
 
     // Time between spawn
-    public float spawnTime = 10f;
+    public float spawnTime = 4f;
 
+    // spawn points for enemy
     public Vector3[] spawnPoints;
 
+    // distance to player for valid spawn points
     public float spawnRangeMax = 40f;
     public float spawnRangeMin = 8f;
 
+    // attack rate of enemy
     public float attackRate = 3f;
 
+    // materials for enemies
     public Material shaderUnity;
     public Material shaderEclipse;
     public Material shaderChrome;
@@ -33,7 +39,7 @@ public class EnemyManager : MonoBehaviour {
     void Start () {
         InitializeSpawnPoints();
         shaders = new Material[] { shaderUnity, shaderEclipse, shaderChrome, shaderGit };
-        Debug.Log(shaders[0].name);
+        // repeatingly spawn enemy based on spawn time
         InvokeRepeating("Spawn", spawnTime, spawnTime);
     }
 	
@@ -43,7 +49,7 @@ public class EnemyManager : MonoBehaviour {
 	}
 
     /// <summary>
-    /// Spawn an enemy
+    /// Spawn an enemy when player still alive
     /// </summary>
     private void Spawn()
     {

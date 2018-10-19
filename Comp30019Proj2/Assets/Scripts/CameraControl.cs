@@ -46,8 +46,6 @@ public class CameraControl : MonoBehaviour
         float newYRotation = 0.0f;
         float amountToMove = Time.deltaTime * speed;
         Vector3 temporary;
-        Vector3 futurePosition;
-        Vector3 futureAngle;
 
         // Calculate future position and checks whether it goes beyond the terrain size
         // then proceeds if it's within the bounds
