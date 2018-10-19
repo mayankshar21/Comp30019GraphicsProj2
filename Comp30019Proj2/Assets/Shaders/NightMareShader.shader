@@ -2,7 +2,7 @@
 
 // Code learnt and adapted from https://www.youtube.com/watch?v=Tjl8jP5Nuvc
 // Fog formula and concept also adapted from http://in2gpu.com/2014/07/22/create-fog-shader/
-Shader "Unlit/FogShader"
+Shader "Unlit/NightMareShader"
 {
 	Properties
 	{

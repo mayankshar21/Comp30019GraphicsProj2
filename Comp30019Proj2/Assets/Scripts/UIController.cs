@@ -18,11 +18,14 @@ public class UIController : MonoBehaviour {
 
     public GameObject clearPanel;
 
+    public GameObject pauseButton;
+
 	// Use this for initialization
 	void Start () {
         gameEndPanel.SetActive(false);
         pausePanel.SetActive(false);
         clearPanel.SetActive(false);
+        pauseButton.SetActive(true);
     }
 	
 	// Update is called once per frame
@@ -32,11 +35,13 @@ public class UIController : MonoBehaviour {
 
     public void EndGame()
     {
+        pauseButton.SetActive(false);
         gameEndPanel.SetActive(true);
     }
 
     public void ClearGame()
     {
+        pauseButton.SetActive(false);
         clearPanel.SetActive(true);
     }
 
@@ -49,12 +54,14 @@ public class UIController : MonoBehaviour {
     {
         Time.timeScale = 0;
         pausePanel.SetActive(true);
+        pauseButton.SetActive(false);
     }
 
     public void HidePause()
     {
         Time.timeScale = 1;
         pausePanel.SetActive(false);
+        pauseButton.SetActive(true);
     } 
 
     public void RestartGame()

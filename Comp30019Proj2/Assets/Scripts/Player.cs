@@ -8,8 +8,6 @@ public class Player : MonoBehaviour {
     public int maxHP = 20;
     private int currentHP = 20;
     public GameController gameController;
-    public float fireRate = 0.1f;
-    private float fireTimer;
 
     private GameObject laptop;
 
@@ -18,18 +16,13 @@ public class Player : MonoBehaviour {
     void Start () {
         currentHP = maxHP;
         laptop = Resources.Load("laptop") as GameObject;
-        fireTimer = Time.timeSinceLevelLoad;
     }
 	
 	// Update is called once per frame
 	void Update () {
         if (Input.GetMouseButtonDown(0))
         {
-            if (Time.timeSinceLevelLoad >= fireTimer)
-            {
-                fireTimer = Time.timeSinceLevelLoad + fireRate;
-                this.Attack();
-            }           
+            this.Attack();         
         }
 
     }

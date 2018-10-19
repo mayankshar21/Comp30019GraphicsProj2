@@ -6,6 +6,8 @@ public class GameController : MonoBehaviour {
 
     public UIController UIController;
     public EnemyManager enemyManager;
+    public GameObject mainCamera;
+    public Shader nightMareShader;
 
     private float spawnTimeInterval = 0.5f;
     private float attackRateInterval = 0.2f;
@@ -16,7 +18,8 @@ public class GameController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Time.timeScale = 1;	
+        Time.timeScale = 1;
+        this.ActiveNightMare(false);
 	}
 	
 	// Update is called once per frame
@@ -37,6 +40,14 @@ public class GameController : MonoBehaviour {
         enemyManager.spawnTime -= spawnTimeInterval;
         enemyManager.attackRate -= attackRateInterval;
         UIController.waveText.text = "Week: "+currWave;
+        if ((currWave % 6) == 0)
+        {
+            this.ActiveNightMare(true);
+        }
+        else
+        {
+            this.ActiveNightMare(false);
+        }
     }
 
     public void UpdateNumKilled()
@@ -60,6 +71,22 @@ public class GameController : MonoBehaviour {
     public void UpdateHP(int hp)
     {
         UIController.UpdateCurrHP(hp);
+    }
+
+    /// <summary>
+    /// Code learnt from https://www.youtube.com/watch?v=Tjl8jP5Nuvc&t=256s
+    /// </summary>
+    public void ActiveNightMare(bool isActive)
+    {
+        if (isActive)
+        {
+            mainCamera.GetComponent<Camera>().SetReplacementShader(nightMareShader, "RenderType");
+        }
+        else
+        {
+            mainCamera.GetComponent<Camera>().ResetReplacementShader();
+        }
+        
     }
 
 
