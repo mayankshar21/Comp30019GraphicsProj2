@@ -59,8 +59,8 @@ public class EnemyManager : MonoBehaviour {
         }
         Vector3 spawnPoint = FindSpawnPoint();
         GameObject newEnemy = Instantiate(enemy, spawnPoint, Quaternion.identity);
-        newEnemy.GetComponent<EnemyController>().player = playerObject;
-        newEnemy.GetComponent<EnemyController>().SetAttackRate(this.attackRate);
+        newEnemy.GetComponent<Enemy>().player = playerObject;
+        newEnemy.GetComponent<Enemy>().SetAttackRate(this.attackRate);
         newEnemy.GetComponent<Renderer>().material = shaders[UnityEngine.Random.Range(0, 3)];
     }
 

@@ -5,7 +5,7 @@ using UnityEngine.AI;
 /// <summary>
 /// Enemy script
 /// </summary>
-public class EnemyController : MonoBehaviour {
+public class Enemy : MonoBehaviour {
 
     // target player
     public GameObject player;

@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 7}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 492}
   m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
-  controlID: 81
+  controlID: 27
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 80
+  controlID: 101
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -168,7 +168,7 @@ MonoBehaviour:
     y: 0
     width: 1536
     height: 781
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &8
 MonoBehaviour:
@@ -274,7 +274,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Prefabs
+    - Assets/RPG Character Animation Pack FREE/Elements
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders:
@@ -287,7 +287,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 6c270200
     m_LastClickedID: 141164
-    m_ExpandedIDs: 00000000200a0000840a00007c0b00005c0c0000bc0c0000260d0000760d0000280e00009c0e0000260f00002c0f00007c0f000054100000
+    m_ExpandedIDs: 00000000862d0000da2d0000e22d00001c2e000022300000263000004a30000058300000623000000e3100006c310000be31000022320000e2320000c0440000c2440000c4440000c6440000c8440000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -312,10 +312,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 72}
+    scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000200a0000840a00007c0b0000be0b00005c0c0000bc0c0000080d0000260d0000760d0000280e00009c0e0000260f00007c0f00001e10000054100000
+    m_ExpandedIDs: 00000000862d0000b62d0000e22d0000e42d00003a2e0000d22f0000223000004a30000058300000623000000e3100006c31000080310000be310000dc3100002232000064320000e2320000c0440000c2440000c4440000c6440000c8440000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -433,18 +433,18 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 96e9f9ff4e20faff8c40faffa06bfaff583ffcff1a40fcffa441fcffb041fcff284bfcffea4bfcff744dfcff804dfcffa2a1fcff68a2fcfff2a3fcfffea3fcff1ec4fcff06c5fcff94c6fcffa4c6fcfff2e3fffff0fbffff00000000fc1700001ab20000f8b700007ad800006a6d0100886d0100e06e0100f0700100fc7301004e740100f0770100a07801003cdf0100c0e20100f6f601002cfc0100
+    m_ExpandedIDs: 4cfaffff00000000583c000002410000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Enemy
-      m_OriginalName: Enemy
+      m_Name: DestroyPlane
+      m_OriginalName: DestroyPlane
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: -398954
+      m_UserData: -83732
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -483,14 +483,14 @@ MonoBehaviour:
     height: 710
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 114173.93493850886
+  lastFramingTime: 1936.697936044428
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 40.867092, y: 1.5, z: 39.55}
+    m_Target: {x: 40.867096, y: -5, z: 39.550003}
     speed: 2
-    m_Value: {x: 40.867092, y: 1.5, z: 39.55}
+    m_Value: {x: 40.867096, y: -5, z: 39.550003}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -518,13 +518,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.6144966, y: 0.01064213, z: -0.008299951, w: 0.788819}
+    m_Target: {x: 0.19397652, y: -0.030901402, z: 0.0061056656, w: 0.98051375}
     speed: 2
-    m_Value: {x: 0.6144893, y: 0.010642004, z: -0.008299854, w: 0.7888097}
+    m_Value: {x: 0.19397397, y: -0.030900996, z: 0.0061055855, w: 0.9805009}
   m_Size:
-    m_Target: 4.0416584
+    m_Target: 479.17004
     speed: 2
-    m_Value: 4.0416584
+    m_Value: 479.17004
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -581,7 +581,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoom: 0
     m_UniformScale: 1
     m_UpDirection: 1
@@ -634,5 +634,5 @@ MonoBehaviour:
     x: 925
     y: 92
     width: 275
-    height: 302
+    height: 387
   m_PersistentViewDataDictionary: {fileID: 0}
