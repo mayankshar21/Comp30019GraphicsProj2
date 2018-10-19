@@ -30,6 +30,10 @@ public class LapTop : MonoBehaviour
     /// <param name="col">object collide with</param>
     public void OnCollisionEnter(Collision col)
     {
+        if (col.gameObject.name == "DestroyPlane")
+        {
+            Destroy(this.gameObject);
+        }
         if (col.gameObject.tag == "Enemy" && !hasCollide)
         {
             Destroy(col.gameObject);
