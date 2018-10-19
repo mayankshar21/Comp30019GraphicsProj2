@@ -23,11 +23,18 @@ public class EnemyManager : MonoBehaviour {
 
     public float attackRate = 3f;
 
-	// Use this for initialization
-	void Start () {
+    public Material shaderUnity;
+    public Material shaderEclipse;
+    public Material shaderChrome;
+    public Material shaderGit;
+    private Material[] shaders;
+
+    // Use this for initialization
+    void Start () {
         InitializeSpawnPoints();
+        shaders = new Material[] { shaderUnity, shaderEclipse, shaderChrome, shaderGit };
+        Debug.Log(shaders[0].name);
         InvokeRepeating("Spawn", spawnTime, spawnTime);
-        //changeShader = new ChangeShader();
     }
 	
 	// Update is called once per frame
@@ -48,8 +55,7 @@ public class EnemyManager : MonoBehaviour {
         GameObject newEnemy = Instantiate(enemy, spawnPoint, Quaternion.identity);
         newEnemy.GetComponent<EnemyController>().player = playerObject;
         newEnemy.GetComponent<EnemyController>().SetAttackRate(this.attackRate);
-        //changeShader.GetComponent<ChangeShader>.c
-        //newEnemy.GetComponent<Shader>.
+        newEnemy.GetComponent<Renderer>().material = shaders[UnityEngine.Random.Range(0, 3)];
     }
 
     /// <summary>

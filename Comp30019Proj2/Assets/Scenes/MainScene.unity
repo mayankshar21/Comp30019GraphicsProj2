@@ -12871,6 +12871,10 @@ MonoBehaviour:
   spawnRangeMax: 40
   spawnRangeMin: 5
   attackRate: 3
+  shaderUnity: {fileID: 2100000, guid: 3a7d5513708db164696dc8729087b3cd, type: 2}
+  shaderEclipse: {fileID: 2100000, guid: e0f21021f9fbefc42ae33b1b02d5bae2, type: 2}
+  shaderChrome: {fileID: 2100000, guid: 48e0d922f43b40941aa92c25d7b15d90, type: 2}
+  shaderGit: {fileID: 2100000, guid: 8c57acbc241c55345a63c90c4c8bfeb6, type: 2}
 --- !u!4 &1157208148
 Transform:
   m_ObjectHideFlags: 0
@@ -12890,7 +12894,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1157208146}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a0f40f56e832b9409b8b1246e640002, type: 3}
   m_Name: 
