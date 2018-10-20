@@ -50,7 +50,7 @@ public class Player : MonoBehaviour {
     }
 
     /// <summary>
-    /// Generate weapon
+    /// Generate weapon and allow player to throw.
     /// </summary>
     private void Attack()
     {

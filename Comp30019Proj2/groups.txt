@@ -1,0 +1,26 @@
+Group Members with their names, usernames and emailaddress.
+Mayank Sharma 
+mayanks1 
+(mayanks1@student.unimelb.edu.au)
+Chao Li
+Chaol6
+(chaol6@student.unimelb.edu.au)
+Judd Guerrero 
+Jguerrero
+(jguerrero@student.unimelb.edu.au)
+
+Work done by each team member:
+
+Chao
+Map Modelling – creating the map, creating the buildings in the map,
+User Interface – Main menu screen, player and game status display, game over screen
+Script – Game state control (pause, restart, wave control etc), shader switch, code refactoring
+Enemy AI – Enemy spawning points, enemy creation, the enemy path
+MiniMap – showing the position of player and enemies nearby
+Judd 
+Camera control – character control, visible camera visual
+Scripts – Weapon projectile, Object collision detection
+Mayank 
+Shaders – cell shader, Filter for the nightmare mode 
+Textures -  textures to buildings, and enemy 
+Particle System – Fog Particle System of the game

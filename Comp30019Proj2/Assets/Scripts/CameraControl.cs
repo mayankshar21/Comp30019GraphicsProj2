@@ -25,13 +25,7 @@ public class CameraControl : MonoBehaviour
     {
         // Initialize position of camera based on terrain size
         this.transform.position = new Vector3(28.06f, 0.69f, 2.12f);
-       /*xMax = 0;
-        zMax = 0;
-        yMax = 0;
-
-        Vector3 initialPosition = new Vector3(-xMax, yMax*2, -zMax);*/
-
-        //this.transform.position = initialPosition;
+       
         this.transform.eulerAngles += new Vector3(30.0f, 45.0f, 0.0f);
 
     }
@@ -83,12 +77,7 @@ public class CameraControl : MonoBehaviour
         yaw += cameraSpeed * Input.GetAxis("Mouse X") * Time.deltaTime;
         newYRotation = this.transform.eulerAngles.y + yaw;
         // Calculates movement of mouse in the y-axis
-        //pitch += speed * Input.GetAxis("Mouse Y");
         // Applies the change in yaw and pitch to the angle of the camera
-        //pitch += Input.GetAxis("Mouse Y") * cameraSpeed * Time.deltaTime;
-        //newXRotation = Mathf.Clamp(this.transform.eulerAngles.x + pitch, -0.4375f, 381.0f) - 360.0f;
-        //newXRotation = this.transform.eulerAngles.x + pitch;
-        //print(newXRotation);
         if (newXRotation < 20.0f && newXRotation > 0.0f){
             this.transform.eulerAngles = new Vector3(newXRotation, newYRotation, 0.0f);
         }
@@ -101,17 +90,7 @@ public class CameraControl : MonoBehaviour
         else{
             this.transform.eulerAngles = new Vector3(newXRotation- pitch, newYRotation , 0.0f);
         }
-      // if(newXRotation < 0){
-        //    newXRotation = 360 + newXRotation;
-      //  }
-
-        //Vector3 rotationAngles = this.transform.eulerAngles + new Vector3(pitch, yaw, 0.0f); ;
-
-
-        //print(this.transform.eulerAngles);
-
-
-       
+      
     }
 
   
