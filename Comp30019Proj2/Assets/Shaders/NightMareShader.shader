@@ -1,7 +1,10 @@
 ﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
-// Code learnt and adapted from https://www.youtube.com/watch?v=Tjl8jP5Nuvc
-// Fog formula and concept also adapted from http://in2gpu.com/2014/07/22/create-fog-shader/
+// Created by Mayank Sharma.
+// Code originally intended to be a fog shader however, it was later applied to camera and changed to nightmare shader.
+// Code learnt and adapted from:
+// Replacement shader concept learnt from https://www.youtube.com/watch?v=Tjl8jP5Nuvc
+// Nightmare formula and concept also adapted from http://in2gpu.com/2014/07/22/create-fog-shader/
 Shader "Unlit/NightMareShader"
 {
 	Properties

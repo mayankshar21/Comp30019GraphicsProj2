@@ -1,4 +1,5 @@
-﻿// From tutorial materials
+﻿// Created and adapted by Mayank Sharma.
+// Code adapted from the University Lab material.
 Shader "Unlit/BuildingShader"
 {
 	Properties

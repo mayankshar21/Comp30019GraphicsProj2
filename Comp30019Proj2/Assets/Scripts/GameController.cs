@@ -96,7 +96,7 @@ public class GameController : MonoBehaviour {
 
     /// <summary>
     /// Active nightmare mode
-    /// Code learnt from https://www.youtube.com/watch?v=Tjl8jP5Nuvc&t=256s
+    /// Code learnt and adapted from https://www.youtube.com/watch?v=Tjl8jP5Nuvc&t=256s
     /// </summary>
     public void ActiveNightMare(bool isActive)
     {

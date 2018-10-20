@@ -1,4 +1,6 @@
-﻿Shader "Unlit/GitShader"
+﻿// Created by Mayank Sharma.
+// Basic default unlit shader created for the sole purpose of providing texture to the enemy.
+Shader "Unlit/GitShader"
 {
 	Properties
 	{

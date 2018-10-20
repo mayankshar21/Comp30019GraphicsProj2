@@ -1,8 +1,10 @@
-﻿// https://pdfs.semanticscholar.org/d17c/efe2c199a87a2ee8e5dc82399a50a8e951c4.pdf
+﻿// Created by Mayank Sharma.
+// Code learnt and adapted from: 
+// https://pdfs.semanticscholar.org/d17c/efe2c199a87a2ee8e5dc82399a50a8e951c4.pdf
 // http://www.shaderslab.com/demo-77---cel-shading-(formula).html
 // https://www.youtube.com/watch?v=mbuOaBtTBxg
-// Phong Shader from University Lab material
-// Shader outline from https://www.youtube.com/watch?v=3qBDTh9zWrQ&t=554s 
+// Some parts from Phong Shader from University Lab material.
+// Shader outline adapted from https://www.youtube.com/watch?v=3qBDTh9zWrQ&t=554s 
 // https://www.youtube.com/watch?v=sMs-VjbUZg4
 Shader "Unlit/CelShader"
 {
@@ -57,29 +59,30 @@ Shader "Unlit/CelShader"
 			
 			fixed4 frag (vertOut v) : SV_Target
 			{
-				// setting up constants parameters
+				// Setting up constants parameters.
 				float objectOutline = 0.3;
 				float diffusionThreshold = 4.0;
 
-				// setting up the different vector components
+				// Setting up the different vector components.
 				float3 V = normalize(_WorldSpaceCameraPos);
 				float3 L = normalize(_WorldSpaceLightPos0);
 				float3 interpNormal = normalize(v.worldNormal);
 
-				// dot product of matrices
+				// Dot product of matrices.
 				float LdotN = dot(L, interpNormal);
+				// Calculation of shader outline.
 				float outLineWidth = saturate((dot(interpNormal, V) - objectOutline) * 1000);
 				
-				// setting up ambient component of Cel Shader
+				// Setting up ambient component of Cel Shader.
 				float Ka = 0.3;
 				float amb = Ka;
 
-				// setting up diffuse component of Cel Shader
+				// Setting up diffuse component of Cel Shader.
 				float fAtt = 1;
 				float Kd = 1;
 				float dif = fAtt * Kd * floor(LdotN * diffusionThreshold) / (diffusionThreshold - 0.5);
 
-				// sample the texture
+				// Sample the texture.
 				fixed4 returnColor = tex2D(_MainTex, v.uv);
 				returnColor.rgb = returnColor.rgb * saturate(dif + amb) * _LightColor0.rgb * outLineWidth;
 				return returnColor;
