@@ -1,5 +1,5 @@
-﻿// Created and adapted by Mayank Sharma.
-// Code adapted from the University Lab material.
+﻿// Created by Mayank Sharma.
+// Basic default unlit shader created for the sole purpose of providing texture to the buliding.
 Shader "Unlit/BuildingShader"
 {
 	Properties

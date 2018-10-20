@@ -1,5 +1,5 @@
 ﻿// Created by Mayank Sharma.
-// Basic default unlit shader created for the sole purpose of providing texture to the enemy.
+// Basic default unlit shader created for the sole purpose of providing color.
 Shader "Unlit/ColorShader"
 {
 	Properties

@@ -71,10 +71,11 @@ Shader "Unlit/CelShader"
 				// Dot product of matrices.
 				float LdotN = dot(L, interpNormal);
 				// Calculation of shader outline.
+				// 1000 factor prevents the outline to blend with the player texture. 
 				float outLineWidth = saturate((dot(interpNormal, V) - objectOutline) * 1000);
 				
 				// Setting up ambient component of Cel Shader.
-				float Ka = 0.3;
+				float Ka = 0.6;
 				float amb = Ka;
 
 				// Setting up diffuse component of Cel Shader.
